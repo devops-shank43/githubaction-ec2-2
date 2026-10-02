@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "value of aws region"
-  default     = "eu-west-1"
+  default     = "eu-west-2"
 }
 
 variable "ami_id" {
