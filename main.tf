@@ -12,14 +12,14 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "aws_key" {
-  key_name   = "aws-key"
-  public_key = file("aws-key.pub")
+  key_name   = "github-key"
+  public_key = file("github-key.pub")
 }
 
 resource "aws_instance" "my_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = file("aws-key.pub")
+  key_name               = aws_key_pair.aws_key.key_name
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   user_data              = file("nginx.sh")
   metadata_options {

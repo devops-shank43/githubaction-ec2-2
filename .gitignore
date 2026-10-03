@@ -34,4 +34,4 @@ terraform.rc
 
 #bootstap
 bootstrap/
-aws-key
+github-key
