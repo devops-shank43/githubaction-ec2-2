@@ -53,7 +53,7 @@ resource "aws_security_group" "web_sg" {
     to_port     = 22
     protocol    = "tcp"
 
-    cidr_blocks = ["223.236.161.31/32"]
+    cidr_blocks = ["152.58.152.68/32"]
   }
 
   # 📤 Outbound (generally open rehta hai)
