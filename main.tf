@@ -11,15 +11,15 @@ provider "aws" {
   region = var.aws_region
 }
 
-# resource "aws_key_pair" "aws_key" {
-#   key_name   = "aws-key"
-#   public_key = file("aws-key.pub")
-# }
+resource "aws_key_pair" "aws_key" {
+  key_name   = "aws-key"
+  public_key = file("aws-key.pub")
+}
 
 resource "aws_instance" "my_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = "demo-docker"
+  key_name               =file("aws-key.pub")
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   user_data              = file("nginx.sh")
   metadata_options {

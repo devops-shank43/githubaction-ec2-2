@@ -35,4 +35,3 @@ terraform.rc
 #bootstap
 bootstrap/
 aws-key
-aws-key.pub
