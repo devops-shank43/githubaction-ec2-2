@@ -19,7 +19,7 @@ provider "aws" {
 resource "aws_instance" "my_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
-  key_name               = "aws-key"
+  key_name               = "demo-docker"
   vpc_security_group_ids = [aws_security_group.web_sg.id]
   user_data              = file("nginx.sh")
   metadata_options {
